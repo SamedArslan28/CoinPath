@@ -15,6 +15,7 @@ class MessageCellTableViewCell: UITableViewCell {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var coinCode: UILabel!
 
+    @IBOutlet weak var coinPriceImage: UIImageView!
     @IBOutlet weak var coinIcon: UIImageView!
     
     override func awakeFromNib() {
@@ -29,11 +30,15 @@ class MessageCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
         coinCode.textColor = .secondaryLabel
-        if Double(changePrice.text ?? "0") ?? 0.0 >= 0.0 {
-            changePrice.textColor = .green
-        }else{
-            changePrice.textColor = .red
-        }
+
+        changePrice.textColor = Double(changePrice.text ?? "0") ?? 0.0 >= 0.0 ? .green : .red
+
+        
+
+        
+
+
+
         coinIcon.image = UIImage(named: coinName.text ?? "Bitcoin")
 
     }

@@ -18,7 +18,7 @@ class CoinModel {
             request.httpMethod = "GET"
 
             // Add headers to the request
-            request.addValue("9eb5a421-c765-455a-a3cf-fc1727cc5099", forHTTPHeaderField: "X-CMC_PRO_API_KEY")
+            request.addValue(K.apiKey, forHTTPHeaderField: "X-CMC_PRO_API_KEY")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
 
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
