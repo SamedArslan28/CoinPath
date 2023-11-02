@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UITableViewController, UINavigationControllerDelegate  {
 
     var model = CoinModel()
-    
+
 
     override func viewDidLoad() {
 
@@ -23,39 +23,29 @@ class ViewController: UITableViewController, UINavigationControllerDelegate  {
         self.title = "CoinPath"
         navigationController?.navigationBar.prefersLargeTitles = true
 
-        tableView.reloadData()
-
         tableView.delegate = self
-       
+
 
     }
 
-
-
-    
-    
     @IBAction func getData(_ sender: UIBarButtonItem) {
 
         model.dataTask()
         tableView.reloadData()
 
-
-
-
-        }
-
-
     }
+
+}
 
 
 
 
 extension ViewController{
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-                cell.alpha = 0
+
         cell.transform = CGAffineTransform(scaleX: 1, y: 0)
         UIView.animate(withDuration: 0.5) {
-                        cell.alpha = 1
+
             cell.transform = CGAffineTransform(scaleX: 1, y: 1)
 
         }
@@ -81,16 +71,6 @@ extension ViewController{
         model.results.count
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewControllerToPush = DetailsView()
-
-
-
-
-
-        navigationController?.pushViewController(viewControllerToPush, animated: true)
-
-    }
 
     func loadImage(from url: URL) -> UIImage? {
         let semaphore = DispatchSemaphore(value: 0)

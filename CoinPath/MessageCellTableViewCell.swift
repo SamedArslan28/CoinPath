@@ -29,18 +29,10 @@ class MessageCellTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
         coinCode.textColor = .secondaryLabel
 
         changePrice.textColor = Double(changePrice.text ?? "0") ?? 0.0 >= 0.0 ? .green : .red
-
-
-
-
-
-
-
-//        coinIcon.image = UIImage(named: coinName.text ?? "Bitcoin")
-
 
 
     }
