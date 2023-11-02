@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import UIKit
+
+class DetailsView: UIViewController{
+
+    @IBOutlet weak var myLabel: UILabel!
+    
+    override func viewDidLoad() {
+
+    }
+    
+
+    
+
+    
+}

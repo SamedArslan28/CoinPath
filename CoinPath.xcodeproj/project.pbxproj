@@ -18,6 +18,7 @@
 		61615B102AE8893000895E6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61615B0E2AE8893000895E6F /* LaunchScreen.storyboard */; };
 		61AADD7A2AF145B500397084 /* MessageCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AADD782AF145B500397084 /* MessageCellTableViewCell.swift */; };
 		61AADD7B2AF145B500397084 /* MessageCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AADD792AF145B500397084 /* MessageCellTableViewCell.xib */; };
+		61C8A4A42AF3CDB10044A65F /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C8A4A32AF3CDB10044A65F /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		61615B112AE8893000895E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61AADD782AF145B500397084 /* MessageCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellTableViewCell.swift; sourceTree = "<group>"; };
 		61AADD792AF145B500397084 /* MessageCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCellTableViewCell.xib; sourceTree = "<group>"; };
+		61C8A4A32AF3CDB10044A65F /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				615E46CF2AEBDCFD00143B6E /* Coin.swift */,
 				615E46D32AEBDD6000143B6E /* CoinModel.swift */,
 				6133CABA2AF3ABFD00435261 /* Keys.swift */,
+				61C8A4A32AF3CDB10044A65F /* DetailsView.swift */,
 			);
 			path = CoinPath;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				61615B082AE8892F00895E6F /* ViewController.swift in Sources */,
 				61615B042AE8892F00895E6F /* AppDelegate.swift in Sources */,
 				6133CABB2AF3ABFD00435261 /* Keys.swift in Sources */,
+				61C8A4A42AF3CDB10044A65F /* DetailsView.swift in Sources */,
 				615E46D02AEBDCFD00143B6E /* Coin.swift in Sources */,
 				61615B062AE8892F00895E6F /* SceneDelegate.swift in Sources */,
 			);

@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,11 +11,24 @@
         <!--View Controller-->
         <scene sceneID="P1R-LK-RX6">
             <objects>
-                <tableViewController id="9z0-V7-jXl" customClass="ViewController" customModule="CoinBase" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="9z0-V7-jXl" customClass="ViewController" customModule="CoinPath" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1ay-vk-1Ad">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="demo" id="m8i-9F-0W5">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m8i-9F-0W5" id="pfA-2R-uoo">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="D9c-dU-Hq6" kind="show" id="r8u-Me-mzv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="9z0-V7-jXl" id="4FS-7x-sgx"/>
                             <outlet property="delegate" destination="9z0-V7-jXl" id="xwn-D3-BkL"/>
@@ -30,12 +44,44 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WW3-sb-MlC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1269.4656488549617" y="-81.690140845070431"/>
+            <point key="canvasLocation" x="1436" y="-94"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Details View-->
+        <scene sceneID="KEf-bv-GqT">
+            <objects>
+                <viewController id="D9c-dU-Hq6" customClass="DetailsView" customModule="CoinPath" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N1s-7c-pdJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wq-ds-I0H">
+                                <rect key="frame" x="176" y="416" width="41.333333333333343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SnL-LV-F1i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6wq-ds-I0H" firstAttribute="centerX" secondItem="N1s-7c-pdJ" secondAttribute="centerX" id="IcE-X1-ABT"/>
+                            <constraint firstItem="6wq-ds-I0H" firstAttribute="centerY" secondItem="N1s-7c-pdJ" secondAttribute="centerY" id="Z0S-LA-tbz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YEI-aL-Gly"/>
+                    <connections>
+                        <outlet property="label" destination="6wq-ds-I0H" id="TOG-Mq-msL"/>
+                        <outlet property="myLabel" destination="6wq-ds-I0H" id="lBS-rY-3zV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yeg-g1-EkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2397.709923664122" y="-94.366197183098592"/>
+        </scene>
+        <!--CoinPath-->
         <scene sceneID="pHd-E6-7bN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2pe-0H-AVe" sceneMemberID="viewController">
+                <navigationController title="CoinPath" automaticallyAdjustsScrollViewInsets="NO" id="2pe-0H-AVe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pzl-rD-5JH">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

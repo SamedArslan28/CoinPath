@@ -9,7 +9,7 @@ import UIKit
 
 class MessageCellTableViewCell: UITableViewCell {
 
-    
+
     @IBOutlet weak var coinName: UILabel!
     @IBOutlet weak var changePrice: UILabel!
     @IBOutlet weak var price: UILabel!
@@ -17,9 +17,9 @@ class MessageCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var coinPriceImage: UIImageView!
     @IBOutlet weak var coinIcon: UIImageView!
-    
+
     override func awakeFromNib() {
-        
+
         super.awakeFromNib()
         // Initialization code
 
@@ -33,14 +33,18 @@ class MessageCellTableViewCell: UITableViewCell {
 
         changePrice.textColor = Double(changePrice.text ?? "0") ?? 0.0 >= 0.0 ? .green : .red
 
-        
-
-        
 
 
 
-        coinIcon.image = UIImage(named: coinName.text ?? "Bitcoin")
+
+
+
+//        coinIcon.image = UIImage(named: coinName.text ?? "Bitcoin")
+
+
 
     }
-    
 }
+
+
+
