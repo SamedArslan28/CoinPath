@@ -6,6 +6,10 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+##Project-wide
+AppDelegate.swift
+Keys.swift
+
 ## User settings
 xcuserdata/
 
@@ -97,8 +101,7 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
-##Project-wide
-Keys.swift
+
 
 
 
