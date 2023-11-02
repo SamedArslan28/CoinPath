@@ -31,7 +31,8 @@ class CoinModel {
                             // Access and use the decoded data
                             // Handle other properties as needed
                             self.results = decodedData.data
-                            
+                            print("Data decoded and array changed")
+
 
 
                         } else {

@@ -20,7 +20,8 @@ class ViewController: UITableViewController, UINavigationControllerDelegate {
         tableView.reloadData()
 
     }
-    
+
+
 
     
     
@@ -35,6 +36,9 @@ class ViewController: UITableViewController, UINavigationControllerDelegate {
 
 
     }
+
+
+
 
 extension ViewController{
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
