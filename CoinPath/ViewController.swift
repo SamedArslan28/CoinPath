@@ -12,13 +12,14 @@ class ViewController: UITableViewController, UINavigationControllerDelegate  {
     var model = CoinModel()
 
 
-    override func viewDidLoad() {
+    override func viewDidLoad()  {
 
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MessageCellTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "MessageCell")
         // Do any additional setup after loading the view.
         tableView.dataSource = self
-        model.dataTask()
+
+
         navigationController?.title = "CoinPath"
         self.title = "CoinPath"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -26,11 +27,15 @@ class ViewController: UITableViewController, UINavigationControllerDelegate  {
         tableView.delegate = self
 
 
+
+
     }
 
-    @IBAction func getData(_ sender: UIBarButtonItem) {
+    @IBAction func getData(_ sender: UIBarButtonItem)  {
 
-        model.dataTask()
+//        model.dataTask()
+//        tableView.reloadData()
+        model.getData()
         tableView.reloadData()
 
     }
@@ -53,15 +58,18 @@ extension ViewController{
 
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageCellTableViewCell
 
-        cell.price.text = "$" + String(format:"%.2f" ,model.results[indexPath.row].quote.USD.price ?? 0)
-        cell.coinName.text = String(model.results[indexPath.row].name)
-        cell.coinCode.text = String(model.results[indexPath.row].symbol)
-        cell.changePrice.text = String(format:"%.2f" ,model.results[indexPath.row].quote.USD.percent_change_24h ?? 0)
-        cell.coinPriceImage.image =  Double(model.results[indexPath.row].quote.USD.percent_change_24h ?? 0) >= 0.0 ? UIImage(systemName:  "arrowshape.up.fill")?.withTintColor(.green,renderingMode: .alwaysOriginal) : UIImage(systemName:  "arrowshape.down.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal)
-        cell.coinIcon.image = loadImage(from: URL(string: "https://s2.coinmarketcap.com/static/img/coins/64x64/\(model.results[indexPath.row].id).png")!)
+        let currentCoin = model.results[indexPath.row]
+
+        cell.price.text = "$" + String(format: "%.2f", currentCoin.quote.USD.price ?? 0)
+        cell.coinName.text = currentCoin.name
+        cell.coinCode.text = currentCoin.symbol
+        cell.changePrice.text = String(format: "%.2f", currentCoin.quote.USD.percent_change_24h ?? 0)
+        cell.coinPriceImage.image = Double(currentCoin.quote.USD.percent_change_24h ?? 0) >= 0.0 ? UIImage(systemName: "arrowshape.up.fill")?.withTintColor(.green, renderingMode: .alwaysOriginal) : UIImage(systemName: "arrowshape.down.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal)
+
+        
+        cell.coinIcon.image = loadImage(from: URL(string: "https://s2.coinmarketcap.com/static/img/coins/64x64/\(currentCoin.id).png")!)
 
         return cell
     }

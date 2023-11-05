@@ -46,4 +46,56 @@ class CoinModel {
             print("Invalid URL")
         }
     }
+
+    func dataTaskV2() async {
+        let stringURL = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?cryptocurrency_type=coins&sort=market_cap&limit=20"
+
+        guard let url = URL(string: stringURL)
+        else {
+            print("invalid URL")
+            return
+        }
+
+        var request = URLRequest(url: url)
+
+        request.httpMethod = "GET"
+        request.addValue(K.apiKey, forHTTPHeaderField: "X-CMC_PRO_API_KEY")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+        do{
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard (response as? HTTPURLResponse)?.statusCode == 200 
+
+            else {
+                throw CoinError.serverError
+            }
+
+            let decoder = JSONDecoder()
+            guard let  decodedData = try? decoder.decode(Coin.self, from: data)
+            
+            else {
+                throw CoinError.invalidData
+            }
+
+            self.results = decodedData.data
+            print(decodedData.data)
+
+
+
+
+
+        }catch{
+            
+            return
+
+        }
+
+
+    }
+
+    func getData() {
+        Task(priority: .medium) {
+            await dataTaskV2()
+        }
+    }
 }

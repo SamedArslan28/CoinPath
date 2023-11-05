@@ -19,6 +19,7 @@
 		61AADD7A2AF145B500397084 /* MessageCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AADD782AF145B500397084 /* MessageCellTableViewCell.swift */; };
 		61AADD7B2AF145B500397084 /* MessageCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AADD792AF145B500397084 /* MessageCellTableViewCell.xib */; };
 		61C8A4A42AF3CDB10044A65F /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C8A4A32AF3CDB10044A65F /* DetailsView.swift */; };
+		61CDDA892AF8489000230C8F /* CoinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CDDA882AF8489000230C8F /* CoinError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		61AADD782AF145B500397084 /* MessageCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellTableViewCell.swift; sourceTree = "<group>"; };
 		61AADD792AF145B500397084 /* MessageCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCellTableViewCell.xib; sourceTree = "<group>"; };
 		61C8A4A32AF3CDB10044A65F /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		61CDDA882AF8489000230C8F /* CoinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				61615B032AE8892F00895E6F /* AppDelegate.swift */,
 				61615B052AE8892F00895E6F /* SceneDelegate.swift */,
 				61615B072AE8892F00895E6F /* ViewController.swift */,
+				61CDDA882AF8489000230C8F /* CoinError.swift */,
 				61615B092AE8892F00895E6F /* Main.storyboard */,
 				61AADD782AF145B500397084 /* MessageCellTableViewCell.swift */,
 				61AADD792AF145B500397084 /* MessageCellTableViewCell.xib */,
@@ -162,6 +165,7 @@
 				61615B082AE8892F00895E6F /* ViewController.swift in Sources */,
 				61615B042AE8892F00895E6F /* AppDelegate.swift in Sources */,
 				6133CABB2AF3ABFD00435261 /* Keys.swift in Sources */,
+				61CDDA892AF8489000230C8F /* CoinError.swift in Sources */,
 				61C8A4A42AF3CDB10044A65F /* DetailsView.swift in Sources */,
 				615E46D02AEBDCFD00143B6E /* Coin.swift in Sources */,
 				61615B062AE8892F00895E6F /* SceneDelegate.swift in Sources */,

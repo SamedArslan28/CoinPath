@@ -21,6 +21,10 @@ class MessageCellTableViewCell: UITableViewCell {
     override func awakeFromNib() {
 
         super.awakeFromNib()
+
+        coinCode.textColor = .secondaryLabel
+
+        changePrice.textColor = Double(changePrice.text ?? "0") ?? 0.0 >= 0.0 ? .green : .red
         // Initialization code
 
     }
@@ -30,9 +34,7 @@ class MessageCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
         
-        coinCode.textColor = .secondaryLabel
 
-        changePrice.textColor = Double(changePrice.text ?? "0") ?? 0.0 >= 0.0 ? .green : .red
 
 
     }
